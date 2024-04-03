@@ -1,0 +1,39 @@
+---
+title: 'Clipboard'
+description: 'Interacting with clipboard'
+---
+
+
+
+### Clipboard.copy
+
+Copies text or a file to the clipboard.
+
+#### Signature
+
+<CodeGroup>
+```ts clipboard.ts 
+async function copy(content: string | number | Content): Promise<void>
+```
+</CodeGroup>
+
+#### Props
+<ParamField body="content" type="string|integer|Content" required>
+  The content to be added to the Clipboard.
+</ParamField>
+
+
+#### Example
+
+<CodeGroup>
+```ts example.ts 
+import {  Clipboard } from "@enconvo/api";
+
+export default async function main(req: Request) {
+
+    // copy text to clipboard
+    await Clipboard.copy("Hello World")
+
+}
+```
+</CodeGroup>
