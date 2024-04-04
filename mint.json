@@ -26,7 +26,13 @@
     "url": "https://enconvo.com"
   },
   "tabs": [],
-  "anchors": [],
+  "anchors": [
+    {
+      "name": "Extension Store",
+      "icon": "store",
+      "url": "https://mintlify.com/docs"
+    }
+  ],
   "navigation": [
     {
       "group": "Get Started",
