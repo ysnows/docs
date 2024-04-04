@@ -5,7 +5,7 @@ description: 'Interacting with clipboard'
 
 
 
-### Clipboard.copy
+## Clipboard.copy
 
 Copies text or a file to the clipboard.
 
@@ -34,6 +34,74 @@ export default async function main(req: Request) {
     // copy text to clipboard
     await Clipboard.copy("Hello World")
 
+}
+```
+</CodeGroup>
+
+
+
+## Clipboard.selectedText
+
+Retrieves the currently selected text.
+
+#### Signature
+
+<CodeGroup>
+```ts clipboard.ts 
+async function selectedText(): Promise<string>
+```
+</CodeGroup>
+
+#### Returns
+
+<ResponseField  type="string" required>
+  The currently selected text trimmed of whitespace, or an empty string if no text is selected.
+</ResponseField>
+
+
+#### Example
+
+<CodeGroup>
+```ts example.ts 
+import { Clipboard } from "@enconvo/api";
+
+export default async function main(req: Request) {  
+    // Retrieve selected text from the Clipboard
+    const text = await Clipboard.selectedText();
+    console.log(text); // Outputs the selected text or an empty string
+}
+```
+</CodeGroup>
+
+---
+
+## Clipboard.paste
+
+Pastes the provided content.
+
+#### Signature
+
+<CodeGroup>
+```ts clipboard.ts 
+async function paste(content: string | number | Content): Promise<void>
+```
+</CodeGroup>
+
+#### Props
+<ParamField body="content" type="string|integer|Content" required>
+  The content to be pasted from the Clipboard.
+</ParamField>
+
+
+#### Example
+
+<CodeGroup>
+```ts example.ts 
+import { Clipboard } from "@enconvo/api";
+
+export default async function main(req: Request) {  
+    // Paste content to the clipboard target
+    await Clipboard.paste("Pasted Content");
 }
 ```
 </CodeGroup>

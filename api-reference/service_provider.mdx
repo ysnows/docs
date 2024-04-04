@@ -1,0 +1,40 @@
+---
+title: 'ServiceProvider'
+description: 'Service Provider'
+---
+
+
+## ServiceProvider.load
+
+Load the object of the service provider.
+
+#### Signature
+
+<CodeGroup>
+```ts provider.ts 
+function load<T>(options: any): T
+```
+</CodeGroup>
+
+#### Props
+<ParamField body="options" type="any" required>
+  The options to load the service provider.
+</ParamField>
+
+
+#### Example
+
+<CodeGroup>
+```ts example.ts 
+import {  ServiceProvider } from "@enconvo/api";
+
+export default async function main(req: Request) {
+
+    const { options } = await req.json();
+
+    // Load the chat service provider
+    const chat: BaseChatModel = ServiceProvider.load(options.llm);
+}
+```
+</CodeGroup>
+

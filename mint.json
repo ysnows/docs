@@ -26,13 +26,7 @@
     "url": "https://enconvo.com"
   },
   "tabs": [],
-  "anchors": [
-    {
-      "name": "User Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    }
-  ],
+  "anchors": [],
   "navigation": [
     {
       "group": "Get Started",
@@ -50,7 +44,8 @@
     {
       "group": "API Documentation",
       "pages": [
-        "api-reference/clipboard"
+        "api-reference/clipboard",
+        "api-reference/service_provider"
       ]
     }
   ],
